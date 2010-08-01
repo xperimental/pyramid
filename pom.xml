@@ -10,7 +10,13 @@
     <packaging>jar</packaging>
 
     <name>pyramid</name>
-    <url>http://maven.apache.org</url>
+    <url>http://github.com/xperimental/pyramid</url>
+
+    <scm>
+        <connection>scm:git:git://github.com/xperimental/pyramid.git</connection>
+        <developerConnection>scm:git:ssh://git@ssh.github.com:443/xperimental/pyramid.git</developerConnection>
+        <url>http://github.com/xperimental/pyramid/</url>
+    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -70,6 +76,22 @@
                     </archive>
                 </configuration>
             </plugin>
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.0</version>
+            </plugin>
         </plugins>
     </build>
+    <distributionManagement>
+        <repository>
+            <id>sourcewalker-nexus</id>
+            <name>sourcewalker.net Maven Repository</name>
+            <url>dav:http://sourcewalker.net/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>sourcewalker-nexus</id>
+            <name>sourcewalker.net Maven Repository</name>
+            <url>dav:http://sourcewalker.net/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
